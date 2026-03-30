@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VirtualMac Studio</title>
-  <meta name="description" content="VirtualMac Studio is a native macOS app for creating and managing virtual macOS machines on Apple silicon.">
+  <meta name="description" content="VirtualMac Studio is a native macOS app for creating and managing virtual macOS machines on Apple silicon, with flexible storage growth and Finder-friendly shared folders.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
           <p class="lede">
             VirtualMac Studio is a native macOS app for creating and managing virtual macOS machines
             on Apple silicon. It is built to make setup, storage, hardware tuning, and ongoing VM management
-            feel clear instead of fragile.
+            feel clear instead of fragile, including disk growth that can start small and expand later when needed.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="support.html">Support</a>
@@ -75,24 +75,24 @@
             </p>
           </article>
           <article class="info-card">
+            <h3>Storage that grows with you</h3>
+            <p>
+              There is no need to start with an oversized disk that immediately feels wasteful on the host.
+              VirtualMac Studio lets you begin smaller and expand guest disk capacity later when you actually need it.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Finder-friendly shared folders</h3>
+            <p>
+              Shared folders are designed to feel natural inside the guest, integrating cleanly with Finder
+              so host files are easier to reach during real work.
+            </p>
+          </article>
+          <article class="info-card">
             <h3>Portable VM bundles</h3>
             <p>
               Each VM lives as a self-contained bundle, which makes backup, restore, cloning,
               and external SSD workflows much easier to reason about.
-            </p>
-          </article>
-          <article class="info-card">
-            <h3>Flexible administration</h3>
-            <p>
-              Adjust RAM, CPUs, audio, shared folders, and disk growth for stopped VMs without
-              forcing users into awkward recreate-the-VM workflows.
-            </p>
-          </article>
-          <article class="info-card">
-            <h3>Clear ownership of data</h3>
-            <p>
-              The app is local-first and designed around user-controlled files, not hosted accounts
-              or opaque cloud dependencies.
             </p>
           </article>
         </div>
@@ -108,10 +108,12 @@
           <div class="product-copy">
             <p>
               VirtualMac Studio started as a response to real friction: restore images that feel harder to manage than they should,
-              VM files that are easy to lose track of, and configuration workflows that can feel more technical than they need to be.
+              VM files that are easy to lose track of, guest storage that should not need to be oversized on day one,
+              and configuration workflows that can feel more technical than they need to be.
             </p>
             <p>
-              The goal is to make serious macOS virtualization feel more approachable without hiding the important controls advanced users care about.
+              The goal is to make serious macOS virtualization feel more approachable without hiding the important controls
+              advanced users care about, including flexible hardware settings, expandable storage, and useful host-to-guest file access.
             </p>
           </div>
 
