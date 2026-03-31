@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VirtualMac Studio User Guide</title>
+  <meta name="description" content="Full user guide for VirtualMac Studio, including VM creation, shared folders, VirtualMac Tools installation, disk expansion, clipboard sync, and troubleshooting.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="virtualmacstudio.html">VirtualMac Studio</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">VirtualMac Studio</p>
+        <h1>User Guide</h1>
+        <p class="lede">
+          A practical guide for creating a VM, installing macOS, using shared folders, installing VirtualMac Tools,
+          expanding storage later, and troubleshooting common guest-side issues.
+        </p>
+      </section>
+
+      <section class="page-grid">
+        <article class="content-card">
+          <h2>What VirtualMac Studio Does</h2>
+          <p>VirtualMac Studio is focused on running macOS in a VM on your Mac and making common guest workflows easier.</p>
+          <ul class="feature-list">
+            <li>Creating and reopening macOS virtual machines</li>
+            <li>Moving files between host and guest through shared folders</li>
+            <li>Installing VirtualMac Tools through a package-first flow</li>
+            <li>Helping the guest claim newly added VM disk space after host-side expansion</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Before You Start</h2>
+          <ul class="feature-list">
+            <li>A Mac that supports the virtualization features required by the app</li>
+            <li>Enough free disk space for a macOS VM</li>
+            <li>A macOS installer or restore image suitable for the VM flow you are using</li>
+            <li>Administrator access on the guest if you plan to install VirtualMac Tools</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Create Your First VM</h2>
+          <ul class="feature-list">
+            <li>Open VirtualMac Studio</li>
+            <li>Create a new virtual machine</li>
+            <li>Choose the macOS source the app expects for that workflow</li>
+            <li>Pick a VM name that is easy to recognize later</li>
+            <li>Choose a starting disk size with room for macOS, apps, and test files</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Install macOS in the Guest</h2>
+          <p>Start the VM, complete the normal macOS install flow, finish the guest setup assistant, and confirm the guest reaches the desktop cleanly before adding extra tools.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>Shared Folders</h2>
+          <p>Shared folders are the easiest way to move files between the host and the guest.</p>
+          <ul class="feature-list">
+            <li>Move installers into the guest</li>
+            <li>Move exported files back to the host</li>
+            <li>Access the <code>VirtualMacAutomation</code> folder when guest tools are available</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Install VirtualMac Tools</h2>
+          <ul class="feature-list">
+            <li>Start the VM and sign in</li>
+            <li>Open the shared folder named <code>VirtualMacAutomation</code></li>
+            <li>Open <code>VirtualMacTools.pkg</code></li>
+            <li>Complete the installer inside the guest</li>
+            <li>Approve the guest administrator prompt if macOS asks for it</li>
+            <li>Keep the VM running briefly so the tools can publish status</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>What VirtualMac Tools Enables</h2>
+          <ul class="feature-list">
+            <li>Plain-text clipboard sharing between host and guest</li>
+            <li>Supported guest-side automation requests</li>
+            <li>Supported guest-side follow-up after host-side disk expansion</li>
+          </ul>
+          <p>Older exposed shell scripts and loose plist installer files are no longer the supported guest install flow.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>Expand Disk Size Later</h2>
+          <p>If your VM needs more space later, increase the VM's virtual disk capacity from VirtualMac Studio first.</p>
+          <p>Inside the guest, use Disk Utility to grow the APFS container that holds Macintosh HD if macOS does not claim the space automatically.</p>
+          <p>Terminal fallback inside the guest:</p>
+          <p><code>diskutil apfs list</code></p>
+          <p><code>diskutil apfs resizeContainer &lt;containerIdentifier&gt; 0</code></p>
+        </article>
+
+        <article class="content-card">
+          <h2>Clipboard Sync</h2>
+          <p>Clipboard sync is handled by VirtualMac Tools while the VM is running.</p>
+          <ul class="feature-list">
+            <li>Plain-text clipboard content is the main supported path</li>
+            <li>It may take a moment to reflect changes between host and guest</li>
+            <li>If sync appears stale, keep the VM running briefly and try copying again</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Troubleshooting</h2>
+          <ul class="feature-list">
+            <li>If you only see the installer package in <code>VirtualMacAutomation</code>, that is expected in the package-first flow</li>
+            <li>If the tools do not seem active after installation, keep the guest running briefly and restart or sign in again</li>
+            <li>If the VM disk was enlarged but the guest still shows the old capacity, the APFS container inside the guest probably still needs to expand</li>
+            <li>If shared files are not where you expected, re-check the host access permissions and the guest shared-folder location</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Practical Advice</h2>
+          <p>For the smoothest first experience, create a VM with more room than you think you need, finish macOS installation completely, verify the VM reboots cleanly, then install VirtualMac Tools and test shared folders before heavier guest changes.</p>
+          <p>If you are testing more invasive guest behavior, use a disposable VM or a snapshot first.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>Start Faster</h2>
+          <p>If you want the shorter path instead of the full guide, use the Quick Start.</p>
+          <p><a href="quickstart.html">Open Quick Start</a></p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="virtualmacstudio.html">VirtualMac Studio</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
