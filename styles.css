@@ -108,6 +108,8 @@ a:hover {
 .hero,
 .product-card,
 .content-card,
+.media-stage,
+.media-shot,
 .info-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -240,6 +242,159 @@ h3 {
   font-size: 1.2rem;
 }
 
+.media-showcase {
+  display: grid;
+  gap: 18px;
+}
+
+.media-stage {
+  padding: 30px;
+  border-radius: 28px;
+}
+
+.media-stage-window {
+  min-height: 300px;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(160deg, rgba(20, 115, 230, 0.14), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 58%),
+    var(--surface-strong);
+}
+
+.media-stage-body {
+  margin-top: 22px;
+  max-width: 56ch;
+}
+
+.media-stage-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.media-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.media-badge-muted {
+  background: rgba(128, 149, 183, 0.14);
+  color: var(--muted);
+}
+
+.media-stage-body h3 {
+  margin-top: 16px;
+}
+
+.media-stage-body p,
+.media-shot p {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.media-checklist {
+  max-width: 60ch;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.media-shot {
+  padding: 22px;
+  border-radius: 24px;
+}
+
+.media-shot-frame {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 190px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.media-shot-frame strong {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.media-shot-frame::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  opacity: 0.8;
+}
+
+.media-shot-frame::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 20px 18px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(14px);
+}
+
+.media-shot-frame-setup {
+  background:
+    linear-gradient(135deg, rgba(20, 115, 230, 0.28), rgba(20, 115, 230, 0.06)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 50%);
+}
+
+.media-shot-frame-console {
+  background:
+    linear-gradient(135deg, rgba(55, 180, 118, 0.24), rgba(20, 115, 230, 0.08)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 50%);
+}
+
+.media-shot-frame-tools {
+  background:
+    linear-gradient(135deg, rgba(157, 92, 255, 0.24), rgba(20, 115, 230, 0.08)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 50%);
+}
+
+.media-shot-frame-storage {
+  background:
+    linear-gradient(135deg, rgba(255, 164, 58, 0.24), rgba(20, 115, 230, 0.08)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 50%);
+}
+
+.media-shot-chip {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #10213c;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .section,
 .content-page {
   margin-top: 32px;
@@ -352,7 +507,8 @@ h3 {
   .hero,
   .product-card,
   .page-grid,
-  .info-grid {
+  .info-grid,
+  .media-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -371,7 +527,9 @@ h3 {
 
   .hero,
   .product-card,
-  .content-card {
+  .content-card,
+  .media-stage,
+  .media-shot {
     padding: 24px;
     border-radius: 24px;
   }
