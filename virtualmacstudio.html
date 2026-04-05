@@ -32,7 +32,7 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="virtualmacstudio-support.html">Support</a>
-            <a class="button button-secondary" href="#preview">See Preview</a>
+            <a class="button button-secondary" href="#screenshots">See Screenshots</a>
             <a class="button button-secondary" href="quickstart.html">Quick Start</a>
             <a class="button button-secondary" href="user-guide.html">User Guide</a>
           </div>
@@ -63,92 +63,96 @@
         </div>
       </section>
 
-      <section class="section" id="preview">
+      <section class="section" id="screenshots">
         <div class="section-heading">
-          <p class="eyebrow">Product Preview</p>
-          <h2>Give people a quick feel for the app before they install it.</h2>
+          <p class="eyebrow">Screenshots</p>
+          <h2>See how the app looks before you install it.</h2>
         </div>
 
-        <article class="media-showcase">
-          <div class="media-stage">
-            <div class="media-stage-window">
-              <div class="window-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div class="media-stage-body">
-                <div class="media-stage-badges">
-                  <span class="media-badge">Screen Recording Slot</span>
-                  <span class="media-badge media-badge-muted">Ready for MP4 or WebM</span>
-                </div>
-
-                <h3>A short walkthrough can live here without redesigning the page later.</h3>
-                <p>
-                  For apps like VirtualMac Studio, a short product recording usually explains the workflow
-                  much faster than text alone. This section is ready for a 20 to 40 second walkthrough
-                  showing the first-run path, day-to-day VM control, and the strongest differentiators.
-                </p>
-                <ul class="feature-list media-checklist">
-                  <li>Create a VM with guided restore image, storage, and hardware choices</li>
-                  <li>Open the console, install VirtualMac Tools, and use host to guest clipboard sync</li>
-                  <li>Start with a smaller virtual disk and expand capacity later when the guest needs more space</li>
-                </ul>
-              </div>
+        <article class="product-card screenshot-spotlight">
+          <div class="product-copy">
+            <p>
+              VirtualMac Studio is designed to feel like a serious native Mac app, not a thin shell around a VM engine.
+              The screenshots below show the current product direction across VM management, guided setup, Linux guest support,
+              and flexible storage growth.
+            </p>
+            <ul class="feature-list">
+              <li>Guided create flows for both macOS and Linux guests</li>
+              <li>Normal Mac-style management views for hardware, disks, networking, clipboard, and tools</li>
+              <li>Expandable virtual storage so you can start smaller and grow later</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="downloads/VirtualMacStudio-latest.pkg">Download the App</a>
+              <a class="button button-secondary" href="https://github.com/youritsolution/VirtualMacStudio/discussions">Give Feedback</a>
             </div>
           </div>
 
-          <div class="media-grid">
-            <article class="media-shot">
-              <div class="media-shot-frame media-shot-frame-setup">
-                <span class="media-shot-chip">Step 1</span>
-                <strong>Create</strong>
-              </div>
-              <h3>Create a virtual Mac with less setup friction</h3>
-              <p>
-                Show the wizard briefly so people understand restore image selection, hardware tuning,
-                shared folders, and storage location choices right away.
-              </p>
-            </article>
-
-            <article class="media-shot">
-              <div class="media-shot-frame media-shot-frame-console">
-                <span class="media-shot-chip">Step 2</span>
-                <strong>Run</strong>
-              </div>
-              <h3>Open a normal console window and work naturally</h3>
-              <p>
-                The demo should show the VM opening in its own resizable window, not as a cramped modal,
-                so users immediately understand the Mac-native feel.
-              </p>
-            </article>
-
-            <article class="media-shot">
-              <div class="media-shot-frame media-shot-frame-tools">
-                <span class="media-shot-chip">Step 3</span>
-                <strong>Integrate</strong>
-              </div>
-              <h3>Highlight VirtualMac Tools and clipboard flow</h3>
-              <p>
-                One short moment of copy and paste or shared-folder access inside Finder quickly communicates
-                that the host and guest can work together instead of feeling isolated.
-              </p>
-            </article>
-
-            <article class="media-shot">
-              <div class="media-shot-frame media-shot-frame-storage">
-                <span class="media-shot-chip">Step 4</span>
-                <strong>Expand</strong>
-              </div>
-              <h3>Show storage growing only when needed</h3>
-              <p>
-                This is one of the most persuasive differentiators: start smaller on the host, then expand
-                guest capacity later rather than wasting disk space up front.
-              </p>
-            </article>
+          <div class="screenshot-feature">
+            <img src="photos/virtualmacstudio/overview.jpg" alt="VirtualMac Studio showing a Fedora Linux VM details page with hardware, display, network, shared folders, guest tools, and disk information.">
           </div>
         </article>
+
+        <div class="screenshot-grid">
+          <figure class="screenshot-card">
+            <div class="screenshot-frame">
+              <img src="photos/virtualmacstudio/wizard-general.jpg" alt="VirtualMac Studio create wizard showing the general setup step for a new virtual machine." loading="lazy">
+            </div>
+            <figcaption>
+              <span class="photo-label">Setup</span>
+              <p>Start with the essentials: name, storage location, CPU, RAM, disk size, and the foundation for a new VM.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-card">
+            <div class="screenshot-frame">
+              <img src="photos/virtualmacstudio/wizard-macos-source.jpg" alt="VirtualMac Studio create wizard showing macOS source selection for a new VM." loading="lazy">
+            </div>
+            <figcaption>
+              <span class="photo-label">macOS Source</span>
+              <p>Pick the restore image path cleanly instead of digging through IPSWs and hoping the setup flow behaves.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-card">
+            <div class="screenshot-frame">
+              <img src="photos/virtualmacstudio/wizard-linux-source.jpg" alt="VirtualMac Studio create wizard showing Linux source selection and Linux guest options." loading="lazy">
+            </div>
+            <figcaption>
+              <span class="photo-label">Linux Support</span>
+              <p>The app now also supports Linux guests, making the platform more useful for mixed admin and development workflows.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-card">
+            <div class="screenshot-frame">
+              <img src="photos/virtualmacstudio/console-install.jpg" alt="VirtualMac Studio console window showing the guest install process." loading="lazy">
+            </div>
+            <figcaption>
+              <span class="photo-label">Console</span>
+              <p>Open the VM in a proper console window and work through first boot and installation without fighting modal UI.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-card">
+            <div class="screenshot-frame">
+              <img src="photos/virtualmacstudio/guest-desktop.jpg" alt="A running guest desktop inside VirtualMac Studio." loading="lazy">
+            </div>
+            <figcaption>
+              <span class="photo-label">Running Guest</span>
+              <p>Once the guest is live, the app stays focused on useful controls and clear status rather than ornamental chrome.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-card">
+            <div class="screenshot-frame">
+              <img src="photos/virtualmacstudio/disk-expansion.jpg" alt="VirtualMac Studio increase disk capacity interface for growing guest storage." loading="lazy">
+            </div>
+            <figcaption>
+              <span class="photo-label">Storage Growth</span>
+              <p>Start with less host-space pressure, then increase guest disk capacity later when the machine actually needs it.</p>
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="section">
@@ -192,7 +196,7 @@
       <section class="section">
         <div class="section-heading">
           <p class="eyebrow">Documentation</p>
-          <h2>Start quickly, then go deeper only when you need to.</h2>
+          <h2>Start quickly, then use the full guide for advanced and admin-heavy workflows.</h2>
         </div>
 
         <div class="info-grid">
@@ -207,7 +211,8 @@
           <article class="info-card">
             <h3>User Guide</h3>
             <p>
-              A fuller walkthrough covering shared folders, guest tools, disk expansion, clipboard sync, and troubleshooting.
+              The current main guide for both everyday use and more advanced admin tasks, including shared folders,
+              guest tools, clipboard sync, disk growth, Linux guests, and troubleshooting.
             </p>
             <p><a href="user-guide.html">Open User Guide</a></p>
           </article>

@@ -312,6 +312,64 @@ h3 {
   gap: 18px;
 }
 
+.screenshot-spotlight {
+  align-items: start;
+}
+
+.screenshot-feature,
+.screenshot-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.screenshot-feature {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.screenshot-feature img,
+.screenshot-frame img {
+  width: 100%;
+  display: block;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.screenshot-card {
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.screenshot-frame {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(128, 149, 183, 0.08);
+}
+
+.screenshot-frame img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.screenshot-card figcaption {
+  padding: 18px 20px 22px;
+}
+
+.screenshot-card figcaption p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
 .media-shot {
   padding: 22px;
   border-radius: 24px;
@@ -617,6 +675,7 @@ h3 {
   .page-grid,
   .info-grid,
   .media-grid,
+  .screenshot-grid,
   .photo-grid {
     grid-template-columns: 1fr;
   }
