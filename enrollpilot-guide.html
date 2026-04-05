@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EnrollPilot User &amp; Admin Guide</title>
+  <meta name="description" content="User and admin guide for EnrollPilot, covering setup, credentials, device inventory, DMS assignment, bulk operations, exports, diagnostics, security, and troubleshooting.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">EnrollPilot</p>
+        <h1>User &amp; Admin Guide</h1>
+        <p class="lede">
+          This guide covers system requirements, first-run setup, ABM and ASM credentials, device inventory,
+          DMS server workflows, bulk operations, export, diagnostics, security, and troubleshooting.
+        </p>
+      </section>
+
+      <section class="page-grid">
+        <article class="content-card">
+          <h2>Quick Navigation</h2>
+          <ul class="feature-list">
+            <li><a href="#requirements">System requirements</a></li>
+            <li><a href="#first-run">First-run setup</a></li>
+            <li><a href="#credentials">ABM / ASM API credentials</a></li>
+            <li><a href="#organizations">Adding and managing organizations</a></li>
+            <li><a href="#devices">Devices and DMS servers</a></li>
+            <li><a href="#search-bulk-export">Search, bulk operations, and export</a></li>
+            <li><a href="#diagnostics">Diagnostics and updates</a></li>
+            <li><a href="#security">Security model</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Downloads and Help</h2>
+          <ul class="feature-list">
+            <li><a href="downloads/EnrollPilot-latest.pkg">Download the signed installer</a></li>
+            <li><a href="enrollpilot-support.html">Open support options</a></li>
+            <li><a href="https://github.com/youritsolution/Enroll-Pilot/discussions">Use Discussions for questions and feedback</a></li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section" id="requirements">
+        <div class="section-heading">
+          <p class="eyebrow">1. System Requirements</p>
+          <h2>What you need before you start.</h2>
+        </div>
+        <div class="page-grid page-grid-single">
+          <article class="content-card">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Requirement</th>
+                  <th>Minimum</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>macOS</td><td>macOS 26 (Tahoe) or later</td></tr>
+                <tr><td>Architecture</td><td>Apple Silicon or Intel</td></tr>
+                <tr><td>Network</td><td>Internet access to Apple ABM or ASM APIs</td></tr>
+                <tr><td>Account Role</td><td>Admin or Device Enrollment Manager role</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="first-run">
+        <div class="section-heading">
+          <p class="eyebrow">2. First-Run Setup</p>
+          <h2>Start with one organization, then grow from there.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>Welcome flow</h2>
+            <ol class="feature-list">
+              <li>Understand what EnrollPilot does: multi-org ABM and ASM management</li>
+              <li>Review what Apple Business Manager or Apple School Manager credentials are needed</li>
+              <li>Gather Client ID, Team ID, Key ID, and the P-256 private key</li>
+              <li>Add your first organization and validate the connection before saving</li>
+            </ol>
+          </article>
+          <article class="content-card">
+            <h2>After the first org</h2>
+            <p>
+              Once at least one organization exists, the welcome screen is replaced by the main dashboard and the app becomes your working inventory view.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="credentials">
+        <div class="section-heading">
+          <p class="eyebrow">3. ABM / ASM API Credentials</p>
+          <h2>The four values you need from Apple.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>Where to get them</h2>
+            <p>
+              Sign in to <a href="https://business.apple.com">business.apple.com</a> or <a href="https://school.apple.com">school.apple.com</a>
+              as an administrator and navigate to the API access area in Settings.
+            </p>
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Credential</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Client ID</td><td>Shown when you create or view an API key</td></tr>
+                <tr><td>Team ID</td><td>Your organization’s Apple-assigned identifier</td></tr>
+                <tr><td>Key ID</td><td>Assigned when you generate a key pair</td></tr>
+                <tr><td>Private Key (PEM)</td><td>Downloaded `.p8` file shown only once by Apple</td></tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="content-card">
+            <h2>Important</h2>
+            <p>
+              Download and securely store the private key as soon as you generate it. Apple does not display it again.
+            </p>
+            <p>
+              When you paste the key into EnrollPilot, include the full PEM header and footer lines.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="organizations">
+        <div class="section-heading">
+          <p class="eyebrow">4. Organizations</p>
+          <h2>Add, edit, test, and remove orgs safely.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>Adding an organization</h2>
+            <ol class="feature-list">
+              <li>Click the add button in the sidebar or toolbar</li>
+              <li>Enter a friendly name</li>
+              <li>Choose Business or School</li>
+              <li>Paste Client ID, Team ID, Key ID, and the PEM key</li>
+              <li>Use <strong>Test Connection</strong> before saving</li>
+            </ol>
+          </article>
+          <article class="content-card">
+            <h2>Editing and removing</h2>
+            <p>
+              You can edit an existing organization without re-entering the private key unless it changes.
+              Deleting an organization removes the record and deletes the private key from the macOS Keychain.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="devices">
+        <div class="section-heading">
+          <p class="eyebrow">5. Devices and DMS Servers</p>
+          <h2>The main day-to-day workspace.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>Devices tab</h2>
+            <p>
+              Sync devices from Apple, then filter and search by status, DMS, model, storage, source, and order.
+              Select a row to inspect serial number, model, enrollment status, DMS assignment, purchase data, and activation lock status.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>DMS Servers tab</h2>
+            <p>
+              The DMS Servers tab shows the Device Management Service servers registered in the organization and their current device counts.
+              It is a read-only view designed to support assignment work and validation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="search-bulk-export">
+        <div class="section-heading">
+          <p class="eyebrow">6. Search, Bulk Actions, and Export</p>
+          <h2>Built for real admin throughput.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>Cross-portal search</h2>
+            <p>
+              Use indexed search for speed or live search to query each organization directly. This is useful when you know the serial, IMEI,
+              model, order, org, or DMS clue but not the tenant that contains the device.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>Bulk operations</h2>
+            <p>
+              Paste or import serial numbers, then assign or unassign them in batches. EnrollPilot automatically excludes obvious duplicates and short invalid values.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>Export to CSV</h2>
+            <p>
+              Build a CSV with exactly the fields you need, including serial number, model, status, assigned DMS, date added, and hardware identifiers.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>Diagnostics</h2>
+            <p>
+              Review per-organization sync metrics, inspect the audit log, and export an encrypted diagnostics archive if support needs more detail.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="diagnostics">
+        <div class="section-heading">
+          <p class="eyebrow">7. Updates and Diagnostics</p>
+          <h2>Know what the app is doing and when it needs help.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>Checking for updates</h2>
+            <p>
+              EnrollPilot uses Sparkle for update delivery. The update command may remain unavailable until a valid public appcast URL is configured.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>Rate limiting and etiquette</h2>
+            <ul class="feature-list">
+              <li>Let large syncs finish before starting another</li>
+              <li>Prefer bulk operations over many small requests</li>
+              <li>Avoid repeated rapid refreshes</li>
+              <li>Stagger syncs if you manage many organizations</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="security">
+        <div class="section-heading">
+          <p class="eyebrow">8. Security Model</p>
+          <h2>Designed to keep credentials local and controlled.</h2>
+        </div>
+        <div class="page-grid page-grid-single">
+          <article class="content-card">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Storage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Organization name, Client ID, Team ID, Key ID</td><td>SwiftData, local and sandboxed</td></tr>
+                <tr><td>Private Key PEM</td><td>macOS Keychain, device-bound</td></tr>
+                <tr><td>Device cache, sync metrics, audit log</td><td>SwiftData, local and sandboxed</td></tr>
+                <tr><td>API tokens</td><td>In-memory only, never persisted to disk</td></tr>
+              </tbody>
+            </table>
+            <ul class="feature-list">
+              <li>Private keys are not written to disk in plain text</li>
+              <li>The app uses the macOS App Sandbox with network and user-selected file access</li>
+              <li>All API traffic uses HTTPS to Apple endpoints</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="troubleshooting">
+        <div class="section-heading">
+          <p class="eyebrow">9. Troubleshooting</p>
+          <h2>The most common issues and what to check first.</h2>
+        </div>
+        <div class="page-grid">
+          <article class="content-card">
+            <h2>401 Unauthorized</h2>
+            <ul class="feature-list">
+              <li>Confirm Client ID, Team ID, and Key ID all match the private key</li>
+              <li>Make sure the PEM includes the full header and footer</li>
+              <li>Verify the key has not been revoked in ABM or ASM</li>
+            </ul>
+          </article>
+          <article class="content-card">
+            <h2>Unassign fails with HTTP 409</h2>
+            <p>
+              Sync the organization first so EnrollPilot has the current DMS relationship, then retry the unassign action.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>DMS counts or names look wrong</h2>
+            <p>
+              Refresh the device cache with Sync. DMS counts come from the local cache, and live lookup may be needed if names are stale.
+            </p>
+          </article>
+          <article class="content-card">
+            <h2>Logs and support bundles</h2>
+            <p>
+              Use <strong>Help &gt; Open Logs Folder</strong> for raw logs and <strong>Export Diagnostics</strong> for a support-friendly encrypted archive.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
