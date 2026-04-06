@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intune Bulk Assigner</title>
+  <meta name="description" content="Intune Bulk Assigner is a native macOS admin tool for bulk assignment and unassignment workflows across Microsoft Intune apps, settings catalog policies, configuration profiles, and compliance policies.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Intune Bulk Assigner</p>
+          <h1>A Mac-native control desk for bulk Intune assignment work.</h1>
+          <p class="lede">
+            Intune Bulk Assigner helps Microsoft Intune administrators select many resources at once, inspect current assignments,
+            build one assignment plan, and apply or remove matching assignments across apps, settings catalog policies,
+            configuration profiles, and compliance policies in a controlled workflow.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="intunebulkassigner-guide.html">Open the Guide</a>
+            <a class="button button-secondary" href="intunebulkassigner-support.html">Support</a>
+            <a class="button button-secondary" href="intunebulkassigner-privacy.html">Privacy</a>
+            <a class="button button-secondary" href="https://github.com/youritsolution/Intune-Bulk-Assigner/discussions">Discussions</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-panel-window">
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="window-card">
+              <div class="window-stat">
+                <span class="window-label">Platform</span>
+                <strong>macOS 14 or later</strong>
+              </div>
+              <div class="window-stat">
+                <span class="window-label">Audience</span>
+                <strong>Intune admins, consultants, and MSPs</strong>
+              </div>
+              <div class="window-stat">
+                <span class="window-label">Availability</span>
+                <strong>App Store submission in progress</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Highlights</p>
+          <h2>Built for safer tenant changes when one-by-one assignment work is too slow.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Bulk assignment plans</h3>
+            <p>
+              Select many resources, build one assignment plan, preview it, and apply the same logic across the selected set
+              instead of repeating the same portal steps over and over.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Bulk unassign matching</h3>
+            <p>
+              Remove only the assignments that match your selected scope, groups, intent, and filters without blindly wiping everything.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Evidence export</h3>
+            <p>
+              Export the assignment plan and activity log as evidence for change control, review, rollback planning, and audit records.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Mock mode included</h3>
+            <p>
+              Learn the workflow safely with built-in sample data before switching to live Microsoft Graph access for production work.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Coverage</p>
+          <h2>One app for the assignment-heavy parts of Intune administration.</h2>
+        </div>
+
+        <article class="product-card">
+          <div class="product-copy">
+            <p>
+              Intune Bulk Assigner focuses on the areas where administrators often need to apply the same targeting logic across many objects:
+            </p>
+            <ul class="feature-list">
+              <li>Mobile apps across Win32, Store, LOB, and web link types</li>
+              <li>Settings Catalog configuration policies</li>
+              <li>Device configuration profiles</li>
+              <li>Device compliance policies</li>
+              <li>Include and exclude group targeting</li>
+              <li>Assignment filter include or exclude modes</li>
+            </ul>
+          </div>
+
+          <aside class="product-meta">
+            <div class="meta-card">
+              <span class="meta-label">Core idea</span>
+              <span>Plan once</span>
+              <span>Apply many</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Graph safety</span>
+              <span>Confirmation before destructive actions</span>
+              <span>Retries and throttling awareness</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Output</span>
+              <span>JSON evidence export</span>
+              <span>Activity log export</span>
+            </div>
+          </aside>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>Designed around the real sequence of assignment change work.</h2>
+        </div>
+
+        <article class="product-card">
+          <div class="product-copy">
+            <p>
+              The app is structured around a practical admin loop rather than a generic browser shell:
+            </p>
+            <ul class="feature-list">
+              <li>Start in mock mode or connect live through Microsoft Graph</li>
+              <li>Browse apps, settings catalog, configuration profiles, or compliance policies</li>
+              <li>Inspect current assignments on a selected item before changing anything</li>
+              <li>Build one assignment plan with scope, groups, intent, and filters</li>
+              <li>Preview the plan and confirm before applying or unassigning</li>
+              <li>Review per-item results and export evidence for the run</li>
+            </ul>
+          </div>
+
+          <aside class="product-meta">
+            <div class="meta-card">
+              <span class="meta-label">Main views</span>
+              <span>Resource browser</span>
+              <span>Assignment inspector</span>
+              <span>Assignment builder</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Built-in helpers</span>
+              <span>Magic Setup</span>
+              <span>Magic Offboard</span>
+              <span>Preview Plan</span>
+            </div>
+          </aside>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Security</p>
+          <h2>Credential handling is kept narrow and explicit.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Secrets stay in Keychain</h3>
+            <p>
+              Tenant ID and Client ID are stored locally as profile data, while the Client Secret is stored in the macOS Keychain.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Tokens stay in memory</h3>
+            <p>
+              OAuth tokens are cached in memory only and refreshed automatically before expiry or reacquired after 401 responses.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Sandboxed network use</h3>
+            <p>
+              The app is designed for outgoing Microsoft identity and Graph traffic only, with no incoming connections or unrelated hardware access.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Operator-first checks</h3>
+            <p>
+              Mock mode, confirmation dialogs, evidence export, and per-item run results are all part of the safety story, not afterthoughts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Community</p>
+          <h2>Questions and feedback can now live in public discussions.</h2>
+        </div>
+
+        <article class="product-card">
+          <div class="product-copy">
+            <p>
+              Intune Bulk Assigner now has a public GitHub Discussions space so administrators can ask questions,
+              share feedback, and discuss workflows in a more visible place than email alone.
+            </p>
+            <ul class="feature-list">
+              <li><strong>Discussions</strong> for questions, setup help, and general feedback</li>
+              <li><strong>Support page</strong> for contact details, release status, and guide links</li>
+              <li><strong>User guide</strong> for the full workflow reference</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://github.com/youritsolution/Intune-Bulk-Assigner/discussions">Join Discussions</a>
+              <a class="button button-secondary" href="intunebulkassigner-support.html">Support Options</a>
+            </div>
+          </div>
+
+          <aside class="product-meta">
+            <div class="meta-card">
+              <span class="meta-label">Public Hub</span>
+              <a href="https://github.com/youritsolution/Intune-Bulk-Assigner">GitHub Repository</a>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Discussions</span>
+              <a href="https://github.com/youritsolution/Intune-Bulk-Assigner/discussions">Open Discussions</a>
+            </div>
+          </aside>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Documentation</p>
+          <h2>The guide is the main starting point until screenshots are added.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>User Guide</h3>
+            <p>
+              The guide covers setup, Microsoft Graph access, browsing resources, inspecting assignments, building plans, applying,
+              unassigning, exporting evidence, troubleshooting, and operational best practices.
+            </p>
+            <p><a href="intunebulkassigner-guide.html">Open the Guide</a></p>
+          </article>
+          <article class="info-card">
+            <h3>Support Page</h3>
+            <p>
+              The support page gives you the current contact route, release status, and what information is useful when asking for help.
+            </p>
+            <p><a href="intunebulkassigner-support.html">Open Support</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Availability</p>
+          <h2>Prepared for public release, with Apple App Store review as the current path.</h2>
+        </div>
+
+        <article class="product-card">
+          <div class="product-copy">
+            <p>
+              Intune Bulk Assigner is currently being prepared for App Store Connect. This page exists now so administrators have a stable
+              home for product information, support, privacy details, and the full guide before the public release is live.
+            </p>
+            <ul class="feature-list">
+              <li>Mac App Store submission in progress</li>
+              <li>Website pages ready for support and privacy</li>
+              <li>Screenshots can be added here once they are prepared</li>
+              <li>Public GitHub Discussions is now available for feedback and questions</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="intunebulkassigner-support.html">Open Support</a>
+              <a class="button button-secondary" href="intunebulkassigner-guide.html">Read the Guide</a>
+              <a class="button button-secondary" href="https://github.com/youritsolution/Intune-Bulk-Assigner/discussions">Discussions</a>
+            </div>
+          </div>
+
+          <aside class="product-meta">
+            <div class="meta-card">
+              <span class="meta-label">Release Path</span>
+              <span>App Store submission in progress</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Primary Audience</span>
+              <span>Intune admins</span>
+              <span>Consultants</span>
+              <span>MSPs</span>
+            </div>
+          </aside>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

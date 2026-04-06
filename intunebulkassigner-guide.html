@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intune Bulk Assigner Guide</title>
+  <meta name="description" content="User guide for Intune Bulk Assigner.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">Intune Bulk Assigner</p>
+        <h1>User Guide</h1>
+        <p class="lede">
+          Intune Bulk Assigner is a native macOS application for Mac admins who manage Microsoft Intune and need a safer,
+          faster way to apply or remove the same assignment logic across many resources.
+        </p>
+      </section>
+
+      <section class="page-grid page-grid-single">
+        <article class="content-card">
+          <h2>What It Does</h2>
+          <p>
+            Intune Bulk Assigner lets you select many Intune resources at once, inspect the current assignments on a selected item,
+            build one assignment plan, and then apply or remove matching assignments across all selected resources in one operation.
+          </p>
+          <ul class="feature-list">
+            <li>Apps</li>
+            <li>Settings Catalog policies</li>
+            <li>Configuration profiles</li>
+            <li>Compliance policies</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>System Requirements</h2>
+          <ul class="feature-list">
+            <li>macOS 14 or later</li>
+            <li>Apple Silicon or Intel Mac</li>
+            <li>At least 4 GB RAM</li>
+            <li>Microsoft Intune tenant</li>
+            <li>Entra ID administrator account for first-time setup</li>
+            <li>Network access to <code>login.microsoftonline.com</code> and <code>graph.microsoft.com</code></li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>First Launch</h2>
+          <p>
+            On first launch, the app presents a welcome screen with two setup paths:
+          </p>
+          <ul class="feature-list">
+            <li><strong>Magic Setup</strong> for automatic Entra app registration</li>
+            <li><strong>Manual Configuration</strong> for admins who already have an app registration</li>
+            <li><strong>Explore with sample data</strong> to enter mock mode without touching your tenant</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Microsoft Graph Access</h2>
+          <p>
+            The recommended setup path is Magic Setup. It walks you through device code sign-in, creates or reuses the
+            IntuneBulkAssign app registration, grants the required permissions, and saves the resulting profile locally.
+          </p>
+          <p>
+            Manual setup is also supported if you already manage the Entra registration yourself.
+          </p>
+          <ul class="feature-list">
+            <li><code>DeviceManagementApps.ReadWrite.All</code></li>
+            <li><code>DeviceManagementConfiguration.ReadWrite.All</code></li>
+            <li><code>Group.Read.All</code></li>
+            <li><code>Organization.Read.All</code></li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Main Interface</h2>
+          <p>The app uses a three-column layout:</p>
+          <ul class="feature-list">
+            <li><strong>Left sidebar</strong> for section navigation and settings</li>
+            <li><strong>Center pane</strong> for browsing, searching, filtering, and selecting resources</li>
+            <li><strong>Right pane</strong> for current assignments, assignment plans, results, and the activity log</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Building an Assignment Plan</h2>
+          <p>
+            An assignment plan combines scope, include or exclude groups, app intent where relevant, and optional assignment filters.
+            You can preview the plan before applying it.
+          </p>
+          <ul class="feature-list">
+            <li>All devices</li>
+            <li>All users</li>
+            <li>Selected groups</li>
+            <li>Include or exclude assignment filter mode</li>
+            <li>Required, Available, or Uninstall intent for apps</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Apply and Unassign</h2>
+          <p>
+            Applying preserves existing assignments and merges in the new targets. Unassigning removes only the assignments
+            that match the plan criteria. Both actions show confirmation dialogs before changes are sent to Intune.
+          </p>
+          <p>
+            After a run, the app shows per-resource results, updates the activity log, and reloads assignment counts.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Evidence Export</h2>
+          <p>
+            Export Evidence creates:
+          </p>
+          <ul class="feature-list">
+            <li>A JSON plan file with selected items, scope, filters, warnings, and result status</li>
+            <li>A text activity log file with the timestamped session history</li>
+          </ul>
+          <p>
+            This is intended for CAB records, change control, rollback planning, and audit support.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Troubleshooting Themes</h2>
+          <ul class="feature-list">
+            <li>Connection failures from missing or expired credentials</li>
+            <li>Partial failures caused by permissions, deleted resources, or throttling</li>
+            <li>Mock fallback when live credentials are incomplete</li>
+            <li>Retry handling for transient Graph API errors</li>
+            <li>Manual or Magic Offboard cleanup for abandoned app registrations</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Security Model</h2>
+          <ul class="feature-list">
+            <li>Tenant ID and Client ID stored locally as profile data</li>
+            <li>Client Secret stored in the macOS Keychain</li>
+            <li>Tokens cached in memory only</li>
+            <li>HTTPS network communication</li>
+            <li>Sandboxed app with outgoing network access and user-selected file export access</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Best Practices</h2>
+          <ul class="feature-list">
+            <li>Learn the workflow in mock mode first</li>
+            <li>Validate live mode with a small pilot set before broader runs</li>
+            <li>Inspect current assignments before clicking Apply</li>
+            <li>Export evidence after production changes</li>
+            <li>Use groups instead of broad tenant-wide scopes when possible</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Need Help?</h2>
+          <p>
+            Use the <a href="intunebulkassigner-support.html">support page</a> for contact details and release status,
+            or review the <a href="intunebulkassigner-privacy.html">privacy policy</a> if you need details about local storage and credentials.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
