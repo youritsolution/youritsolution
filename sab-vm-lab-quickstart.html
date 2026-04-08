@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAB VM Lab Quick Start</title>
+  <meta name="description" content="Quick start guide for SAB VM Lab, including VM creation, guest setup, VirtualMac Tools installation, and first-run advice.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">SAB VM Lab</p>
+        <h1>Quick Start</h1>
+        <p class="lede">
+          This is the short version if you want to get a new macOS VM running without reading the full guide first.
+        </p>
+      </section>
+
+      <section class="page-grid page-grid-single">
+        <article class="content-card">
+          <h2>1. Create a VM</h2>
+          <p>Open SAB VM Lab, create a new VM, choose your macOS source, and give the VM a clear name.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>2. Install macOS in the Guest</h2>
+          <p>Start the VM and complete the normal macOS install and first-boot setup inside the guest.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>3. Confirm the Guest Reaches the Desktop</h2>
+          <p>Before adding anything else, make sure the guest boots normally and reaches the desktop cleanly.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>4. Open the Shared Automation Folder</h2>
+          <p>Inside the guest, open the shared folder named <code>VirtualMacAutomation</code>.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>5. Install VirtualMac Tools</h2>
+          <p>Open <code>VirtualMacTools.pkg</code> inside the guest, finish the installer, approve the guest administrator prompt if asked, and keep the VM running for a few seconds.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>6. Use Shared Files and Clipboard Sync</h2>
+          <p>After the tools are installed, SAB VM Lab can support plain-text clipboard sync and other supported guest automation workflows.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>7. Expand Storage Later If Needed</h2>
+          <p>If you enlarge the VM disk later, use Disk Utility inside the guest to grow the APFS container if macOS does not claim the new space automatically.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>8. Use a Disposable VM for Riskier Testing</h2>
+          <p>If you plan to test installers, automation changes, or system-level guest behavior, use a snapshot or a throwaway VM first.</p>
+        </article>
+
+        <article class="content-card">
+          <h2>Need More Detail?</h2>
+          <p>The full setup walkthrough and troubleshooting notes are available in the User Guide.</p>
+          <p><a href="sab-vm-lab-guide.html">Open the User Guide</a></p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -6,7 +6,7 @@ Use this prompt for every new app I want to publish through `youritsolution.dk`.
 
 You are helping me publish a new app under `Your IT Solution`.
 
-For this app, follow the same website-and-community pattern we used for `VirtualMac Studio`.
+For this app, follow the same website-and-community pattern we used for `SAB VM Lab`.
 
 ## Goal
 
@@ -58,7 +58,7 @@ Create or update the website so the new app has:
 - download links if they already exist
 - discussion/feedback links
 
-Use the `VirtualMac Studio` site flow as the reference pattern, but adapt it to the new app instead of copying blindly.
+Use the `SAB VM Lab` site flow as the reference pattern, but adapt it to the new app instead of copying blindly.
 
 At minimum:
 
@@ -77,7 +77,7 @@ For the public side, create or prepare a **public no-source GitHub repo** for th
 - issues hub
 - discussions hub
 
-Use the same model we used for `VirtualMac Studio`:
+Use the same model we used for `SAB VM Lab`:
 
 - no source code in the public repo unless I explicitly ask for it
 - public repo should contain release/support/community-facing files only
