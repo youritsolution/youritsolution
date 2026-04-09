@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dialog Architect Admin Guide</title>
+  <meta name="description" content="Admin guide for Dialog Architect.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">Dialog Architect</p>
+        <h1>Admin Guide</h1>
+        <p class="lede">
+          Dialog Architect is a native macOS application that helps Mac administrators build, preview, and deploy
+          enrollment workflows without writing code or editing XML by hand.
+        </p>
+      </section>
+
+      <section class="page-grid page-grid-single">
+        <article class="content-card">
+          <h2>What It Does</h2>
+          <p>
+            Dialog Architect supports two workflow families from one app:
+          </p>
+          <ul class="feature-list">
+            <li><strong>Jamf Setup Manager</strong> workflows that export as .mobileconfig profiles</li>
+            <li><strong>swiftDialog</strong> workflows that export as installable .pkg packages</li>
+          </ul>
+          <p>
+            The goal is to let admins build, preview, validate, and ship these workflows from a native Mac interface instead of
+            manually assembling configuration files, shell glue, and packaging steps.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>System Requirements</h2>
+          <ul class="feature-list">
+            <li>macOS 14 or later</li>
+            <li>Apple Silicon or Intel Mac</li>
+            <li>About 50 MB for the app itself</li>
+            <li>Jamf Pro 10.35 or later for API integration workflows</li>
+            <li>swiftDialog 2.3 or later when using swiftDialog workflows</li>
+            <li>Setup Manager 1.0 or later when using JSM workflows</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>First Launch</h2>
+          <p>
+            On first launch, Dialog Architect opens a welcome experience with two product paths:
+          </p>
+          <ul class="feature-list">
+            <li>Jamf Setup Manager</li>
+            <li>swiftDialog</li>
+          </ul>
+          <p>
+            The guided setup wizard then walks through workflow choice, optional Jamf Pro connection setup,
+            dependencies, and readiness checks before you begin your first real project.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>The Interface</h2>
+          <p>Dialog Architect uses a three-panel layout:</p>
+          <ul class="feature-list">
+            <li><strong>Sidebar</strong> for projects, templates, search, and recent files</li>
+            <li><strong>Editor</strong> for the section-based visual configuration workflow</li>
+            <li><strong>Preview</strong> for live output and summary information</li>
+          </ul>
+          <p>
+            The toolbar gives quick access to simulation, preview XML, quick testing, export, and preview visibility controls.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Jamf Setup Manager Workflows</h2>
+          <p>
+            JSM projects can include content, branding, enrollment actions, user entry fields, runtime settings,
+            identity and variable handling, post-completion actions, help content, and localization.
+          </p>
+          <ul class="feature-list">
+            <li>Branding with light and dark mode variants</li>
+            <li>Action types such as Jamf Policy, Installomator, Shell Command, Watch Path, Wait, and Inventory Update</li>
+            <li>User entry fields for department, building, asset tag, computer name, and more</li>
+            <li>Runtime choices such as Enrollment vs Login Window, final action, and DEBUG mode</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>swiftDialog Workflows</h2>
+          <p>
+            swiftDialog projects focus on building dialog windows, onboarding flows, notifications, and compliance workflows.
+          </p>
+          <ul class="feature-list">
+            <li>Title, subtitle, message, footer, icon, banner, and accent color</li>
+            <li>Primary, secondary, and info buttons</li>
+            <li>Text fields, secure fields, and dropdown inputs</li>
+            <li>Progress lists linked to installers, scripts, or app steps</li>
+            <li>Window sizing, positioning, timer, keep-on-top, blur, and version pinning</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Preview and Simulation</h2>
+          <p>
+            The built-in preview helps with layout and branding, but the real testing tools are the simulator and preview commands.
+          </p>
+          <ul class="feature-list">
+            <li>Live preview panel for continuous feedback while editing</li>
+            <li>Full-screen JSM simulator with speed controls and form testing</li>
+            <li>swiftDialog preview that runs the actual binary locally</li>
+            <li>Mobileconfig XML preview with search, copy, and upload actions</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Exporting and Deploying</h2>
+          <p>
+            JSM workflows export as .mobileconfig profiles. swiftDialog workflows export as .pkg installers that can contain
+            scripts, JSON configuration, LaunchDaemon content, and optional dependency installers.
+          </p>
+          <ul class="feature-list">
+            <li>Save JSM profiles to disk or upload directly to Jamf Pro</li>
+            <li>Generate swiftDialog packages from the build workflow</li>
+            <li>Quick Test for rapid JSM iteration</li>
+            <li>Validation badges for blocking errors and non-blocking warnings</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Package Signing and Notarization</h2>
+          <p>
+            Dialog Architect includes workflows for package signing and Apple notarization, which matters when exported packages
+            need to pass Gatekeeper and enterprise distribution checks.
+          </p>
+          <ul class="feature-list">
+            <li>Developer ID Installer discovery from your login Keychain</li>
+            <li>Signing identity selection in Preferences</li>
+            <li>Optional notarization using a stored notarytool keychain profile</li>
+            <li>Post-export signature verification</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Jamf Pro Integration</h2>
+          <p>
+            Jamf Pro integration is one of the app’s strongest admin-facing features. It supports API-driven access to resources
+            needed for both workflow authoring and deployment.
+          </p>
+          <ul class="feature-list">
+            <li>Server URL, Client ID, and Client Secret configuration</li>
+            <li>Connection testing from inside the app</li>
+            <li>Profile browsing, import, creation, update, and diff review</li>
+            <li>Department and building retrieval for dropdown-based user entry fields</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Templates and Sharing</h2>
+          <p>
+            Built-in templates help admins start with proven workflow patterns, and project templates can be shared between team members.
+          </p>
+          <ul class="feature-list">
+            <li>Built-in workflow templates for common JSM and swiftDialog scenarios</li>
+            <li>.dialogtemplate export for team sharing</li>
+            <li>Import path that reapplies local preferences such as organization defaults</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Preferences and Shortcuts</h2>
+          <p>
+            Preferences cover general defaults, signing identities, and Jamf Pro configuration.
+            Keyboard shortcuts support fast project creation, previewing, quick testing, exporting, browsing Jamf Pro resources, and toggling preview.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Troubleshooting Themes</h2>
+          <ul class="feature-list">
+            <li>Missing dependencies such as swiftDialog or Setup Manager</li>
+            <li>Signing failures caused by the wrong certificate type</li>
+            <li>Notarization failures from invalid or missing stored credentials</li>
+            <li>Jamf Pro connection errors caused by URL, permissions, or expired credentials</li>
+            <li>Preview or simulator mismatches versus real runtime behavior</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Beta Note</h2>
+          <p>
+            Dialog Architect is currently in invite-only beta. The guide is public because it helps admins understand whether the product
+            fits their workflow before requesting access, but the installer itself is still shared privately with approved testers.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Need Help?</h2>
+          <p>
+            Use the <a href="dialog-architect-support.html">support page</a> for contact details and beta-access guidance,
+            or review the <a href="dialog-architect-privacy.html">privacy policy</a> if you need details about local storage,
+            Jamf Pro integration, and secrets.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
