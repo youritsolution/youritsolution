@@ -809,6 +809,157 @@ h3 {
   font-size: 0.95rem;
 }
 
+.app-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.app-hero-copy h1 {
+  margin-top: 14px;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+}
+
+.app-hero-copy p {
+  margin-top: 18px;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.app-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.app-hero-panel {
+  min-width: 0;
+}
+
+.app-hero-stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 28px;
+  border-radius: 28px;
+  background:
+    linear-gradient(150deg, rgba(20, 115, 230, 0.18), rgba(20, 115, 230, 0.04)),
+    var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.app-hero-image {
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 24px 64px rgba(16, 33, 60, 0.16);
+}
+
+.app-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.app-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.app-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #10213c;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.marketing-section + .marketing-section {
+  margin-top: 40px;
+}
+
+.feature-grid-marketing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature-card-marketing {
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.feature-card-marketing h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+}
+
+.feature-card-marketing p {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+.value-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.value-stat {
+  padding: 22px 24px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.value-stat strong {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.value-stat span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.inline-link-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 20px;
+}
+
+.inline-link-group a {
+  font-weight: 700;
+}
+
 .site-footer {
   margin-top: 36px;
   padding: 8px 4px 0;
@@ -931,7 +1082,10 @@ h3 {
   .info-grid,
   .media-grid,
   .screenshot-grid,
-  .photo-grid {
+  .photo-grid,
+  .app-hero,
+  .feature-grid-marketing,
+  .value-strip {
     grid-template-columns: 1fr;
   }
 }
