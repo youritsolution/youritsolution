@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAB Roster Flow</title>
+  <meta name="description" content="SAB Roster Flow is a native macOS app that bridges Microsoft Entra ID and Apple School Manager, turning roster sync from a manual CSV job into a repeatable workflow.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">SAB Roster Flow</p>
+          <h1>Keep Apple School Manager class rosters current using your Microsoft Entra ID tenant data.</h1>
+          <p class="lede">
+            SAB Roster Flow is a native macOS utility for school IT teams who need to sync class rosters
+            from Microsoft Entra ID into Apple School Manager without manual CSV editing every time classes change.
+            It discovers groups, classifies users as teachers or students with configurable rules, generates
+            ASM-compatible CSV files, and uploads them via SFTP.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="downloads/SabRosterFlow-latest.pkg">Download .pkg</a>
+            <a class="button button-secondary" href="sab-roster-flow-support.html">Support</a>
+            <a class="button button-secondary" href="sab-roster-flow-privacy.html">Privacy</a>
+            <a class="button button-secondary" href="sab-roster-flow-community.html">Discussions</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-panel-window">
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="window-card">
+              <div class="window-stat">
+                <span class="window-label">Source</span>
+                <strong>Microsoft Entra ID (groups, users, attributes)</strong>
+              </div>
+              <div class="window-stat">
+                <span class="window-label">Destination</span>
+                <strong>Apple School Manager via SFTP</strong>
+              </div>
+              <div class="window-stat">
+                <span class="window-label">Availability</span>
+                <strong>Direct download</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">What It Does</p>
+          <h2>A five-step wizard that turns roster sync into a repeatable workflow.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Connect</h3>
+            <p>
+              Enter Microsoft Entra and ASM SFTP connection details. Magic Setup can create the required
+              app registration and permissions automatically using device-code authentication.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Discover</h3>
+            <p>
+              Scan your tenant for Microsoft 365 groups, security groups, or Teams. Select only the
+              groups that should become classes in Apple School Manager.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Map People</h3>
+            <p>
+              Map Entra user attributes to ASM person fields. Choose simple owner-based role assignment
+              or advanced rules that match on job title, department, or any extension attribute.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Map Classes</h3>
+            <p>
+              Configure class and course field mappings. Set a fixed location or use smart location mapping
+              that derives each class location from its instructors.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Export and Sync</h3>
+            <p>
+              Generate ASM-compatible CSV files for local review, or upload the required six-file package
+              directly to Apple School Manager via SFTP. Includes audit logs and run reports.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Headless Automation</h3>
+            <p>
+              Trigger unattended sync via URL scheme (sabflow://sync). Schedule with macOS Shortcuts or
+              launchd for daily automated roster updates without opening the app.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Download</p>
+          <h2>Signed and notarized installer for macOS.</h2>
+        </div>
+
+        <article class="product-card">
+          <div class="product-copy">
+            <p>
+              SAB Roster Flow is distributed as a signed and notarized macOS installer package (.pkg).
+              Download, install, and run through the five-step wizard to connect your Microsoft tenant
+              to Apple School Manager.
+            </p>
+            <ul class="feature-list">
+              <li>Signed with Developer ID for Gatekeeper compatibility</li>
+              <li>Notarized by Apple for safe distribution outside the App Store</li>
+              <li>Requires macOS 14.6 (Sonoma) or later</li>
+              <li>Runs on both Intel and Apple Silicon Macs</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="downloads/SabRosterFlow-latest.pkg">Download .pkg</a>
+              <a class="button button-secondary" href="sab-roster-flow-community.html">Discussions</a>
+            </div>
+          </div>
+
+          <aside class="product-meta">
+            <div class="meta-card">
+              <span class="meta-label">Distribution</span>
+              <span>Direct download (.pkg)</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Good Fit</span>
+              <span>School IT administrators</span>
+              <span>Entra ID to ASM sync workflows</span>
+              <span>Multi-class roster management</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">System</span>
+              <span>macOS 14.6 or later</span>
+              <span>Intel or Apple Silicon</span>
+            </div>
+          </aside>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Highlights</p>
+          <h2>Built for school admins who need reliable roster sync, not more spreadsheet work.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Rule-based role assignment</h3>
+            <p>
+              Go beyond simple group ownership. Define rules that match on job title, department, extension
+              attributes, or any Entra user property to classify staff and students accurately.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Smart location mapping</h3>
+            <p>
+              Derive class locations automatically from instructor attributes, or set a fixed location
+              for all classes. The location scan discovers unique values across your tenant.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Audit and diagnostics</h3>
+            <p>
+              Every sync produces membership audit CSVs, role conflict reports, and run reports with
+              row counts, warnings, and skip summaries. Activity logs track all operations.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Secure credential handling</h3>
+            <p>
+              Entra client secrets and SFTP passwords are stored in macOS Keychain. Factory reset
+              securely wipes all profiles, secrets, logs, and app data from the device.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Documentation</p>
+          <h2>Support, privacy, and community resources.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Support</h3>
+            <p>
+              Contact information, system requirements, troubleshooting tips, and how to report issues.
+            </p>
+            <p><a href="sab-roster-flow-support.html">Open Support</a></p>
+          </article>
+          <article class="info-card">
+            <h3>Privacy</h3>
+            <p>
+              How SAB Roster Flow handles Entra data, credentials, local storage, and what data
+              leaves the device during sync operations.
+            </p>
+            <p><a href="sab-roster-flow-privacy.html">Open Privacy</a></p>
+          </article>
+          <article class="info-card">
+            <h3>Community</h3>
+            <p>
+              Join the GitHub Discussions for feature requests, questions, and sharing workflows
+              with other school administrators.
+            </p>
+            <p><a href="sab-roster-flow-community.html">Open Discussions</a></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

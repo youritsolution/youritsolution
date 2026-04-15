@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAB Roster Flow Support</title>
+  <meta name="description" content="Support information for SAB Roster Flow, including contact details, system requirements, and troubleshooting.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">SAB Roster Flow</p>
+        <h1>Support</h1>
+        <p class="lede">Contact information, requirements, and troubleshooting for SAB Roster Flow.</p>
+      </section>
+
+      <section class="section">
+        <div class="page-grid">
+          <div class="content-card">
+            <h2>Contact</h2>
+            <ul class="feature-list">
+              <li>Email: <a href="mailto:support@youritsolution.dk">support@youritsolution.dk</a></li>
+              <li>Website: <a href="https://youritsolution.dk">youritsolution.dk</a></li>
+              <li>GitHub Discussions: <a href="sab-roster-flow-community.html">Community</a></li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>System Requirements</h2>
+            <ul class="feature-list">
+              <li>macOS 14.6 (Sonoma) or later</li>
+              <li>Intel or Apple Silicon Mac</li>
+              <li>Internet access to Microsoft Graph and ASM SFTP endpoint</li>
+              <li>Entra ID privileges for app registration (Global Admin recommended for Magic Setup)</li>
+              <li>Apple School Manager SFTP credentials</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>What This App Does</h2>
+            <ul class="feature-list">
+              <li>Discovers Microsoft Entra ID groups and classifies members as teachers or students</li>
+              <li>Generates Apple School Manager compatible CSV files (students, staff, classes, courses, locations, rosters)</li>
+              <li>Uploads the required six-file package to ASM via SFTP</li>
+              <li>Supports rule-based role assignment and smart location mapping</li>
+              <li>Provides headless automation via URL scheme for scheduled sync</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Troubleshooting</h2>
+            <ul class="feature-list">
+              <li><strong>Client Secret missing:</strong> Re-enter in Connect and click Save Secret to Keychain</li>
+              <li><strong>SFTP password missing:</strong> Re-enter password and click Save Password to Keychain</li>
+              <li><strong>No students warning:</strong> Review selected group membership and role rules in People Map</li>
+              <li><strong>Hidden membership group returns 0 members:</strong> Verify Member.Read.Hidden permission is granted</li>
+              <li><strong>Upload succeeds but ASM not updated:</strong> Validate package structure and check ASM processing status</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Before Contacting Support</h2>
+            <ul class="feature-list">
+              <li>Check the Activity Log (toolbar) for error messages and warnings</li>
+              <li>Run connection tests for both Microsoft and SFTP in the Connect tab</li>
+              <li>Try a local CSV export first (Generate and Save CSVs) and review the files before uploading</li>
+              <li>Note which step in the wizard the issue occurs at</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Privacy</h2>
+            <p>
+              SAB Roster Flow processes school roster data locally and uploads only the required CSV package to ASM.
+              See the <a href="sab-roster-flow-privacy.html">privacy page</a> for full details on data handling.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

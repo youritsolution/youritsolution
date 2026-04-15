@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAB Roster Flow Privacy</title>
+  <meta name="description" content="Privacy information for SAB Roster Flow, covering data handling, credential storage, and what data leaves the device.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">SAB Roster Flow</p>
+        <h1>Privacy</h1>
+        <p class="lede">How SAB Roster Flow handles your data, credentials, and what leaves the device.</p>
+      </section>
+
+      <section class="section">
+        <div class="page-grid">
+          <div class="content-card">
+            <h2>Data Processing</h2>
+            <ul class="feature-list">
+              <li>SAB Roster Flow reads user and group data from Microsoft Entra ID via Microsoft Graph API</li>
+              <li>Data is processed locally on your Mac to generate Apple School Manager compatible CSV files</li>
+              <li>Generated CSV files are uploaded to Apple School Manager via SFTP when you initiate a sync</li>
+              <li>No data is sent to Your IT Solution or any third party</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Credential Storage</h2>
+            <ul class="feature-list">
+              <li>Entra ID client secrets are stored in macOS Keychain, not in the app database</li>
+              <li>SFTP passwords are stored in macOS Keychain, not in the app database</li>
+              <li>Credentials are retrieved at runtime only when needed for API calls or SFTP connections</li>
+              <li>Factory reset removes all Keychain entries created by the app</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Local Storage</h2>
+            <ul class="feature-list">
+              <li>Sync profiles, field mappings, role rules, and class selections are stored locally using SwiftData</li>
+              <li>Activity logs and run reports are stored in the app Documents directory</li>
+              <li>Manual CSV exports are saved to a folder you choose</li>
+              <li>Temporary files used during upload are deleted automatically after each sync</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Network Connections</h2>
+            <ul class="feature-list">
+              <li><strong>Microsoft login.microsoftonline.com:</strong> OAuth token acquisition</li>
+              <li><strong>Microsoft graph.microsoft.com:</strong> User, group, and membership data retrieval</li>
+              <li><strong>Apple School Manager SFTP endpoint:</strong> CSV package upload</li>
+              <li>No other network connections are made by the app</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Decommission</h2>
+            <ul class="feature-list">
+              <li>Factory Reset (File menu) removes all profiles, mappings, secrets, logs, caches, and preferences</li>
+              <li>Requires explicit confirmation by typing DELETE before execution</li>
+              <li>Deletes Keychain entries, Application Support data, Documents content, and user defaults</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h2>Analytics and Telemetry</h2>
+            <p>SAB Roster Flow does not collect analytics, telemetry, crash reports, or usage data. All processing is local.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
