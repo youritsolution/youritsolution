@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAB Audio Support</title>
+  <meta name="description" content="Support information for SAB Audio.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Your IT Solution</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html" aria-current="page">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">SAB Audio</p>
+        <h1>Support</h1>
+        <p class="lede">
+          Help getting started, solving common issues, and reaching the developer when you need to.
+        </p>
+      </section>
+
+      <section class="page-grid">
+        <article class="content-card">
+          <h2>Getting Started</h2>
+          <p>
+            On first launch, SAB Audio will ask you to import audio. Choose <strong>Import Folder</strong> and select any folder
+            in your iCloud Drive that contains audio files. The app reads the metadata in the background and your library appears within seconds.
+          </p>
+          <p>
+            Files are not copied. SAB Audio references them in place using Apple's security-scoped bookmark system, so 4,000 tracks
+            take zero device storage you didn't already have in iCloud.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Import Tips</h2>
+          <ul class="feature-list">
+            <li>Supported formats include MP3, M4A (AAC + ALAC), FLAC, WAV, AIFF, AAC, M4B audiobooks, and CAF</li>
+            <li>For best library hygiene, organize iCloud Drive as <em>Artist / Album / Track</em> — the app's Folder browser mirrors this</li>
+            <li>Embedded artwork is read at import; the app caches a 300×300 JPEG for fast scrolling</li>
+            <li>If a track imports without metadata, enable MusicBrainz enrichment in Settings to fill it in</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Common Questions</h2>
+          <p>
+            <strong>"My track has no artist or album."</strong> — The file likely lacks embedded metadata.
+            Open <strong>Settings &rarr; Maintenance &rarr; Listening History</strong> to see if MusicBrainz can fill it,
+            or use the <strong>Tag Editor</strong> to enter values manually. Manual edits are preserved across re-scans.
+          </p>
+          <p>
+            <strong>"A track says 'Needs Repair' or won't play."</strong> — The original file may have moved or been renamed in iCloud Drive.
+            Use <strong>Settings &rarr; Repair Broken Links</strong> to reconnect references without losing play count or playlist membership.
+          </p>
+          <p>
+            <strong>"I'd like to listen offline on a flight."</strong> — Long-press a track or use multi-select &rarr; <strong>Pin for Offline</strong>.
+            iCloud Drive will download the file. <strong>Settings &rarr; Offline Downloads</strong> shows progress.
+          </p>
+          <p>
+            <strong>"Is there a CarPlay version?"</strong> — Yes, where Apple has approved the entitlement.
+            Connect your iPhone to a CarPlay-equipped vehicle and you'll see SAB Audio on the CarPlay home screen.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Audiophile Tips</h2>
+          <ul class="feature-list">
+            <li>Enable <strong>Pure Mode</strong> in Settings for bit-perfect output — every DSP stage bypassed</li>
+            <li>Connect a USB DAC via Lightning or USB-C and SAB Audio will request the source's native sample rate</li>
+            <li>Run <strong>Settings &rarr; Audio Quality &rarr; Analyze Library</strong> once to measure loudness across your entire library</li>
+            <li>Set per-output EQ memory on, then save a different preset for each pair of headphones — the app applies them automatically as the route changes</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Privacy</h2>
+          <p>
+            SAB Audio collects nothing. No analytics, no ads, no tracking. The two optional network integrations
+            (MusicBrainz metadata and Last.fm scrobbling) are off by default. Read the full
+            <a href="sabaudio-privacy.html">privacy policy</a>.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Contact the developer</h2>
+          <p>
+            Email:
+            <a href="mailto:support@youritsolution.dk?subject=SAB%20Audio%20Support">support@youritsolution.dk</a>
+          </p>
+          <p>
+            Bug reports: please include the device model, iOS version, and a one-line reproduction.
+            If you can describe the steps that lead to the issue, that's all we need.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
