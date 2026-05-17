@@ -26,9 +26,10 @@
         <h1>Terms of Use</h1>
         <p class="lede">
           By downloading or using SAB Audio, you agree to these terms. They cover license, your content, file access,
-          warranties, liability, and the optional network integrations the app offers.
+          warranties, liability, and the optional network integrations the app offers. These terms apply equally to the
+          iOS version (iPhone &amp; iPad) and the Android version.
         </p>
-        <p class="meta">Last updated: April 29, 2026</p>
+        <p class="meta">Last updated: May 16, 2026</p>
       </section>
 
       <section class="page-grid">
@@ -43,8 +44,9 @@
         <article class="content-card">
           <h2>2. License</h2>
           <p>
-            SAB grants you a limited, non-exclusive, non-transferable, revocable license to use SAB Audio on any Apple device you own or control,
-            subject to the Apple Media Services Terms and these Terms of Use. You may not copy, modify, distribute, sell, lease, reverse engineer,
+            SAB grants you a limited, non-exclusive, non-transferable, revocable license to use SAB Audio on any iOS or Android device
+            you own or control, subject to the Apple Media Services Terms (for iOS installations) or the Google Play Terms of Service
+            (for Android installations), and these Terms of Use. You may not copy, modify, distribute, sell, lease, reverse engineer,
             decompile, or disassemble the app.
           </p>
         </article>
@@ -52,7 +54,8 @@
         <article class="content-card">
           <h2>3. Description</h2>
           <p>
-            SAB Audio is an iOS audio player that plays files stored on your device or in cloud storage such as iCloud Drive.
+            SAB Audio is an audio player for iOS and Android that plays files stored on your device or in cloud storage
+            (iCloud Drive on iOS; Google Drive, OneDrive, Dropbox, or any other Storage Access Framework provider on Android).
             The app references audio files in their original location and does not copy, modify, or redistribute them.
           </p>
         </article>
@@ -68,18 +71,24 @@
         <article class="content-card">
           <h2>5. File Access</h2>
           <p>
-            The app accesses audio through Apple's security-scoped bookmark system. The app can only access files you explicitly select.
-            File references may become invalid if you move, rename, or delete originals; the app provides a Repair Link feature to reconnect them.
-            All playback data is stored locally on your device.
+            The app accesses audio through Apple's security-scoped bookmark system on iOS, and through the Android Storage Access
+            Framework (SAF) on Android. In both cases, the app can only read files you explicitly select. File references may become
+            invalid if you move, rename, or delete originals — or, on Android, if you revoke SAF permission from system settings.
+            The app provides a Repair Link feature to reconnect references. All playback data is stored locally on your device.
           </p>
         </article>
 
         <article class="content-card">
-          <h2>6. iCloud Drive</h2>
+          <h2>6. Cloud and Network Storage</h2>
           <p>
-            When you select files stored in iCloud Drive, the app may trigger a download of files that exist only as cloud placeholders.
+            On iOS, when you select files stored in iCloud Drive, the app may trigger a download of files that exist only as cloud placeholders.
             This download is handled by Apple's iCloud framework and is subject to your iCloud storage plan and internet connection.
             SAB is not responsible for iCloud availability, sync delays, or storage limitations.
+          </p>
+          <p>
+            On Android, when you select a folder or files from a cloud-backed provider (Google Drive, OneDrive, Dropbox, etc.) the
+            provider may download the file on demand through its SAF integration. SAB Audio never sees your cloud account credentials
+            and is not responsible for the availability, sync behavior, or storage limits of any third-party provider.
           </p>
         </article>
 

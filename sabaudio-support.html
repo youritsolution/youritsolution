@@ -31,7 +31,7 @@
 
       <section class="page-grid">
         <article class="content-card">
-          <h2>Getting Started</h2>
+          <h2>Getting Started (iOS)</h2>
           <p>
             On first launch, SAB Audio will ask you to import audio. Choose <strong>Import Folder</strong> and select any folder
             in your iCloud Drive that contains audio files. The app reads the metadata in the background and your library appears within seconds.
@@ -43,12 +43,26 @@
         </article>
 
         <article class="content-card">
+          <h2>Getting Started (Android)</h2>
+          <p>
+            On first launch, SAB Audio will ask you to import audio. Choose <strong>Import Folder</strong> and pick any folder on
+            your device (or in a connected cloud provider exposed through the system file picker — Google Drive, OneDrive, Dropbox, etc.)
+            using the Android Storage Access Framework dialog. You can also pick individual files with <strong>Import Files</strong>.
+          </p>
+          <p>
+            Files are not copied. SAB Audio holds a persisted read permission on the folder you granted and references each file in place.
+            You can revoke that permission at any time from Android system settings.
+          </p>
+        </article>
+
+        <article class="content-card">
           <h2>Import Tips</h2>
           <ul class="feature-list">
-            <li>Supported formats include MP3, M4A (AAC + ALAC), FLAC, WAV, AIFF, AAC, M4B audiobooks, and CAF</li>
-            <li>For best library hygiene, organize iCloud Drive as <em>Artist / Album / Track</em> — the app's Folder browser mirrors this</li>
+            <li>Supported formats include MP3, M4A (AAC + ALAC), FLAC, WAV, AIFF, AAC, M4B audiobooks, OGG/Opus, and CAF</li>
+            <li>For best library hygiene, organize your source as <em>Artist / Album / Track</em> — the Folder browser mirrors that hierarchy on both platforms</li>
             <li>Embedded artwork is read at import; the app caches a 300×300 JPEG for fast scrolling</li>
             <li>If a track imports without metadata, enable MusicBrainz enrichment in Settings to fill it in</li>
+            <li>On Android, large imports run in a background coroutine so a screen-off or app-switch does not interrupt them</li>
           </ul>
         </article>
 
@@ -60,17 +74,19 @@
             or use the <strong>Tag Editor</strong> to enter values manually. Manual edits are preserved across re-scans.
           </p>
           <p>
-            <strong>"A track says 'Needs Repair' or won't play."</strong> — The original file may have moved or been renamed in iCloud Drive.
+            <strong>"A track says 'Needs Repair' or won't play."</strong> — The original file may have moved or been renamed
+            (in iCloud Drive on iOS, or in the folder you granted access to on Android).
             Use <strong>Settings &rarr; Repair Broken Links</strong> to reconnect references without losing play count or playlist membership.
           </p>
           <p>
-            <strong>"I'd like to listen offline on a flight."</strong> — Long-press a track or use multi-select &rarr; <strong>Pin for Offline</strong>.
-            iCloud Drive will download the file. <strong>Settings &rarr; Offline Downloads</strong> shows progress.
+            <strong>"I'd like to listen offline on a flight."</strong> — On iOS, long-press a track or use multi-select &rarr;
+            <strong>Pin for Offline</strong>; iCloud Drive will download the file and <strong>Settings &rarr; Offline Downloads</strong> shows progress.
+            On Android, files imported from on-device folders are already local — they always play offline without any extra step.
           </p>
           <p>
-            <strong>"Is there a CarPlay version?"</strong> — Not in v1.0. CarPlay is part of the
-            v1.1 Pro update, which will be a one-time in-app purchase on top of the free app.
-            Until then, listen via AirPlay or a Bluetooth car stereo.
+            <strong>"Is there a CarPlay / Android Auto version?"</strong> — Not in v1.0 on either platform. CarPlay (iOS) and
+            Android Auto are part of the v1.1 Pro update, which will be a one-time in-app purchase on top of the free app.
+            Until then, listen via AirPlay (iOS) or a Bluetooth car stereo.
           </p>
         </article>
 
@@ -78,9 +94,10 @@
           <h2>Audiophile Tips</h2>
           <ul class="feature-list">
             <li>Enable <strong>Pure Mode</strong> in Settings for bit-perfect output — every DSP stage bypassed</li>
-            <li>Connect a USB DAC via Lightning or USB-C and SAB Audio will request the source's native sample rate</li>
+            <li>Connect a USB DAC (Lightning or USB-C on iOS; USB-C on Android) and SAB Audio will request the source's native sample rate</li>
             <li>Run <strong>Settings &rarr; Audio Quality &rarr; Analyze Library</strong> once to measure loudness across your entire library</li>
             <li>Set per-output EQ memory on, then save a different preset for each pair of headphones — the app applies them automatically as the route changes</li>
+            <li>On Android, 24-bit and 32-bit PCM files play through the DSP chain at native bit depth — no down-conversion to 16-bit</li>
           </ul>
         </article>
 
@@ -100,8 +117,8 @@
             <a href="mailto:support@youritsolution.dk?subject=SAB%20Audio%20Support">support@youritsolution.dk</a>
           </p>
           <p>
-            Bug reports: please include the device model, iOS version, and a one-line reproduction.
-            If you can describe the steps that lead to the issue, that's all we need.
+            Bug reports: please include the device model (iPhone, iPad, or Android phone/tablet), the OS version (iOS or Android),
+            and a one-line reproduction. If you can describe the steps that lead to the issue, that's all we need.
           </p>
         </article>
       </section>

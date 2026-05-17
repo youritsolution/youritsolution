@@ -26,18 +26,20 @@
         <h1>Privacy Policy</h1>
         <p class="lede">
           SAB Audio is designed to keep your data on your device. The app does not collect, transmit, or share any personal information.
-          The only outbound network calls are optional integrations that you must explicitly enable.
+          This policy covers both the iOS version (iPhone &amp; iPad) and the Android version. The only outbound network calls are
+          optional integrations that you must explicitly enable.
         </p>
-        <p class="meta">Last updated: April 29, 2026</p>
+        <p class="meta">Last updated: May 16, 2026</p>
       </section>
 
       <section class="page-grid">
         <article class="content-card">
           <h2>Audio Files</h2>
           <p>
-            SAB Audio accesses audio files that you explicitly select through the iOS file picker or folder picker.
-            The app creates security-scoped bookmarks to reference these files so they can be played without copying them.
-            SAB Audio never accesses files you have not selected.
+            SAB Audio accesses audio files that you explicitly select through the system file or folder picker.
+            On iOS, the app creates security-scoped bookmarks. On Android, the app uses the Storage Access Framework (SAF)
+            and persists read permission only for the folder or files you grant. In both cases the files are referenced in place
+            and not copied. SAB Audio never accesses files you have not selected.
           </p>
         </article>
 
@@ -69,12 +71,35 @@
         </article>
 
         <article class="content-card">
+          <h2>Android Permissions</h2>
+          <p>
+            The Android version of SAB Audio requests only the permissions strictly necessary for local audio playback:
+          </p>
+          <ul class="feature-list">
+            <li><strong>Read access to user-selected folders or files</strong> via the Storage Access Framework
+                (no broad <code>READ_EXTERNAL_STORAGE</code> or <code>MANAGE_EXTERNAL_STORAGE</code> permission is requested)</li>
+            <li><strong>Foreground service</strong> of type <code>mediaPlayback</code> — required by Android so playback can
+                continue while the app is in the background or the screen is off</li>
+            <li><strong>Post notifications</strong> — required on Android 13+ to show the playback notification with
+                play/pause/skip controls on the lock screen and in the notification shade</li>
+            <li><strong>Wake lock</strong> — keeps the CPU awake during active playback so audio doesn't stutter when the
+                screen turns off</li>
+            <li><strong>Internet</strong> — used only by the optional MusicBrainz and Last.fm integrations described below;
+                no other network requests are made</li>
+          </ul>
+          <p>
+            The app does not request access to your microphone, camera, contacts, calendar, location, phone state, SMS,
+            call logs, or any device identifier. It does not include any advertising ID lookup.
+          </p>
+        </article>
+
+        <article class="content-card">
           <h2>Network Access</h2>
           <p>
             The app operates almost entirely offline. The only outbound network requests are:
           </p>
           <ul class="feature-list">
-            <li>iCloud Drive file access — managed by Apple's iCloud framework, not by SAB Audio</li>
+            <li>iCloud Drive file access (iOS only) — managed by Apple's iCloud framework, not by SAB Audio</li>
             <li>MusicBrainz metadata enrichment — off by default. When enabled, the app sends track titles and artist names
                 to <a href="https://musicbrainz.org" target="_blank" rel="noopener">musicbrainz.org</a> to fetch missing metadata.
                 No personal data is sent</li>
@@ -82,11 +107,12 @@
                 to <a href="https://www.last.fm" target="_blank" rel="noopener">last.fm</a>. Authentication uses Last.fm's session-key flow;
                 SAB Audio never sees or stores your Last.fm password</li>
           </ul>
-          <p>Both integrations can be disabled at any time in Settings.</p>
+          <p>Both integrations can be disabled at any time in Settings. The Android version makes no network requests at all unless
+            you explicitly enable one of these two integrations.</p>
         </article>
 
         <article class="content-card">
-          <h2>iCloud Drive</h2>
+          <h2>iCloud Drive (iOS only)</h2>
           <p>
             When you select files from iCloud Drive, SAB Audio uses Apple's security-scoped bookmark API to maintain access.
             File data remains in iCloud Drive under your Apple ID. SAB Audio does not upload, modify, or delete your iCloud Drive files.
@@ -95,10 +121,23 @@
         </article>
 
         <article class="content-card">
+          <h2>On-Device Storage (Android)</h2>
+          <p>
+            On Android, SAB Audio reads from a folder or set of files you explicitly grant via the system Storage Access Framework picker.
+            The app persists the granted permission so the folder is still readable across launches, but the permission can be revoked at
+            any time from the Android system settings. SAB Audio does not move, copy, modify, or delete your audio files. Files imported
+            from cloud-backed providers (Google Drive, OneDrive, Dropbox, etc.) are accessed through the same SAF mechanism — SAB Audio
+            never sees your cloud account credentials.
+          </p>
+        </article>
+
+        <article class="content-card">
           <h2>Data Storage and Security</h2>
           <p>
-            All data resides on your device and is protected by iOS's built-in security: app sandboxing, device encryption when locked,
-            and security-scoped bookmarks that limit access to files you explicitly grant.
+            All data resides on your device. On iOS, it is protected by app sandboxing, device encryption when locked, and
+            security-scoped bookmarks. On Android, it is protected by the per-app private data directory, SAF persisted permissions
+            scoped to the folder you granted, and the device's file-based encryption. The app does not back up its database to
+            iCloud, Google Drive, or any other cloud service.
           </p>
         </article>
 
@@ -106,8 +145,9 @@
           <h2>Data Retention and Deletion</h2>
           <p>
             All data stored by SAB Audio can be deleted at any time by removing individual tracks, using "Remove All from Library" in Settings,
-            or deleting the app from your device. Deleting tracks from SAB Audio does not delete the original audio files from iCloud Drive
-            or your device storage.
+            or uninstalling the app. Deleting tracks from SAB Audio does not delete the original audio files from your storage
+            (iCloud Drive, internal storage, SD card, or the SAF-granted folder). On Android, uninstalling the app also revokes any SAF
+            permissions you granted.
           </p>
         </article>
 
