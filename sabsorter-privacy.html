@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SABSorter Privacy</title>
+  <meta name="description" content="Privacy information for SABSorter.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <span class="brand">Your IT Solution</span>
+    </header>
+
+    <main class="content-page">
+      <section class="page-hero">
+        <p class="eyebrow">SABSorter</p>
+        <h1>Privacy Policy</h1>
+        <p class="lede">
+          SABSorter helps staff place a shared iPad into the correct Jamf School location. It is configured entirely by
+          your organisation's MDM and has no user accounts. SABSorter does not collect, sell, or share personal
+          information, and the developer never receives your data &mdash; the app communicates only with the Jamf School
+          instance your organisation configures.
+        </p>
+        <p class="meta">Last updated: June 11, 2026</p>
+      </section>
+
+      <section class="page-grid">
+        <article class="content-card">
+          <h2>How SABSorter Is Configured</h2>
+          <p>
+            SABSorter is a managed app. All of its settings arrive through Managed App Configuration that your
+            organisation pushes from Jamf School (the MDM). There is no sign-up, no login, and no account. The app reads
+            the device serial number, the device name, an optional location label, and &mdash; for sorting campaigns
+            only &mdash; the connection details for your Jamf School instance.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>QR Mode &mdash; No Network Access</h2>
+          <p>
+            In its default mode, SABSorter simply displays the device's serial number as a QR code together with a
+            location label. In this mode the app makes <strong>no network requests</strong> and holds no credentials.
+            Nothing leaves the device. An administrator scans the code from their own device to perform the sorting.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Self-Service Mode &mdash; What the App Accesses</h2>
+          <p>
+            When your organisation includes API connection details in the configuration, SABSorter can move the device
+            itself. In this mode it connects <strong>only to the Jamf School instance your organisation configured</strong>,
+            over HTTPS, to:
+          </p>
+          <ul class="feature-list">
+            <li>look up this device by its serial number to obtain its identifier and current location</li>
+            <li>retrieve the list of locations so a staff member can choose one</li>
+            <li>optionally, when user lookup is enabled, read the directory to match a typed username to a location</li>
+            <li>move ("migrate") this device to the chosen location</li>
+          </ul>
+          <p>
+            The data involved &mdash; device serial number, device identifier (UDID), device name, location names and
+            identifiers, and (if user lookup is enabled) usernames &mdash; is device and location metadata that already
+            lives in your organisation's Jamf School instance.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>API Credentials</h2>
+          <p>
+            In self-service mode the app uses a scoped API key supplied by your organisation through the MDM
+            configuration. The key is used solely to authenticate to the configured Jamf School instance and is never
+            sent anywhere else. Where it is supplied in encrypted form, it is decrypted on-device only to make those
+            calls. SABSorter does not ask the user for any password or credential.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>What SABSorter Does Not Collect</h2>
+          <p>
+            SABSorter contains no analytics, advertising, or tracking frameworks, and no third-party SDKs. It does not
+            collect your name, email, photos, contacts, calendar, GPS location, advertising identifiers, usage analytics,
+            or crash reports. <strong>The developer (Your IT Solution) does not receive, store, or have access to any
+            data from the app</strong> &mdash; all communication is directly between the device and your organisation's
+            Jamf School instance.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Data Storage and Security</h2>
+          <p>
+            SABSorter keeps no account data and runs no servers. It reads the configuration provided by your MDM and may
+            hold transient, non-secret diagnostics on-device (for example, configuration validation results and the time
+            of the last refresh) to help administrators troubleshoot. Secret values are never displayed. All network
+            communication uses HTTPS only, and the app runs within the iOS application sandbox.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Your Organisation's Role</h2>
+          <p>
+            Your school or organisation operates the Jamf School instance and decides which devices, locations, users,
+            and credentials are configured. With respect to that data, your organisation is the data controller, and its
+            own privacy notice and data-processing terms apply. SABSorter acts only as a client to that system; Your IT
+            Solution does not process your data on any server it controls.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Data Retention and Deletion</h2>
+          <p>
+            SABSorter stores nothing on the developer's side, so there is nothing for us to retain or delete. Removing the
+            credentials from the configuration returns the app to its zero-secret default; removing the app ends all
+            access. Records of a device's location reside in your organisation's Jamf School instance and are controlled
+            by your organisation.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Children's Privacy</h2>
+          <p>
+            SABSorter is a device-administration tool for organisation-managed, shared iPads. It does not require account
+            creation and does not knowingly collect personal information from anyone, including children under 13. Any
+            user information it reads (such as a staff username used to pre-select a location) comes from your
+            organisation's existing Jamf School directory, under your organisation's control, and is not collected by the
+            developer.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Changes to This Policy</h2>
+          <p>
+            If we update this privacy policy, the revised version will be posted at this URL with an updated date. Because
+            SABSorter collects no contact information, we cannot notify users directly; we encourage periodic review.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2>Contact</h2>
+          <p>
+            Privacy questions:
+            <a href="mailto:privacy@youritsolution.dk?subject=SABSorter%20Privacy">privacy@youritsolution.dk</a>
+          </p>
+          <p>
+            General support:
+            <a href="mailto:support@youritsolution.dk?subject=SABSorter%20Privacy">support@youritsolution.dk</a>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Your IT Solution. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
